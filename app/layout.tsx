@@ -6,7 +6,7 @@ import Footer from "@/components/footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-site.com"), // your real domain
+  metadataBase: new URL("https://portfolio-blog-szn.vercel.app"), // your real domain
   title: {
     default: "Shahzaib Nawaz — Web Developer",
     template: "%s — Shahzaib Nawaz",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     title: "Shahzaib Nawaz — Web Developer",
     description:
       "Front-end developer building fast, accessible web apps with Next.js.",
-    url: "https://your-site.com",
+    url: "https://portfolio-blog-szn.vercel.app",
     siteName: "Shahzaib Nawaz",
     type: "website",
   },

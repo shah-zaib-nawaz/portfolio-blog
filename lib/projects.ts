@@ -14,7 +14,7 @@ export const projects: Project[] = [
       "This very site — built with Next.js, Tailwind v4, and MDX.",
     tags: ["Next.js", "TypeScript", "Tailwind"],
     image: "/projects/portfolio1.jpg",
-    liveUrl: "https://your-site.com",
+    liveUrl: "https://portfolio-blog-szn.vercel.app/",
     repoUrl: "https://github.com/shah-zaib-nawaz",
   },
   {
