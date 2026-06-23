@@ -86,6 +86,7 @@ export default function HomePage() {
                   {new Date(post.date).toLocaleDateString("en-US", {
                     month: "short",
                     day: "numeric",
+                    year: "numeric"
                   })}
                 </time>
               </div>

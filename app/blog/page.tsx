@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
 import { Badge } from "@/components/ui/badge";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog | Shahzaib Nawaz",
+  description: "Writing about front-end development, learning in public, and building clean web experiences.",
+};
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();

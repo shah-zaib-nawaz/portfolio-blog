@@ -8,6 +8,12 @@ import {
   CardTitle,
   CardDescription,
 } from "@/components/ui/card";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects | Shahzaib Nawaz",
+  description: "A showcase of fast, accessible web applications and interfaces built with Next.js and TypeScript.",
+};
 
 export default function ProjectsPage() {
   return (

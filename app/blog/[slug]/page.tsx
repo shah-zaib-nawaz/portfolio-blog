@@ -1,17 +1,50 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/posts";
 
-// Pre-render every post at build time.
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+// 1. Dynamic SEO Metadata Generation
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
+
+  if (!post) {
+    return { 
+      title: "Post Not Found | Shahzaib Nawaz" 
+    };
+  }
+
+  const { title, description, date } = post.frontmatter;
+
+  return {
+    title: `${title} | Shahzaib Nawaz`,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: date,
+      url: `/blog/${slug}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
+
+// 2. Build-time Static Route Pre-rendering
 export function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }));
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+// 3. Page Component Layout
+export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
 
@@ -19,7 +52,6 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  // Destructure readingTime alongside frontmatter and content
   const { frontmatter, content, readingTime } = post;
 
   return (
@@ -29,7 +61,6 @@ export default async function BlogPostPage({
           {frontmatter.title}
         </h1>
         
-        {/* Container for date and reading time */}
         <div className="mt-2 flex items-center gap-2 text-sm text-muted-foreground">
           <time>
             {new Date(frontmatter.date).toLocaleDateString("en-US", {

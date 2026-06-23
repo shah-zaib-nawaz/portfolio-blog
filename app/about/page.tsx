@@ -10,6 +10,13 @@ const skills = [
     "PostgreSQL",
 ];
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About",
+  description: "A bit about me, my background, and the tools I use.",
+};
+
 export default function AboutPage() {
     return (
         <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
