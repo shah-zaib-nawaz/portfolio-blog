@@ -1,7 +1,7 @@
 # Shahzaib Nawaz — Portfolio & Blog
 
 A personal portfolio and blog built with the modern Next.js stack.  
-Live at: https://your-portfolio.vercel.app
+Live at: https://portfolio-blog-szn.vercel.app/
 
 ---
 
