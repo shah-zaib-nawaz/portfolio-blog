@@ -7,7 +7,7 @@ export default function Footer() {
         <p>© {new Date().getFullYear()} Shahzaib Nawaz. All rights reserved.</p>
         <div className="flex gap-4">
           <a
-            href="https://github.com/shah-zaib-nawaze"
+            href="https://github.com/shah-zaib-nawaz"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-foreground"
